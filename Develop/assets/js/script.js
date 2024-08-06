@@ -15,13 +15,16 @@ function saveToLocalStorage() {
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
-    return `
-        <div class="task-card" id="task-${task.id}">
-            <h3>${task.title}</h3>
-            <p>${task.description}</p>
-            <p>Deadline: ${task.deadline}</p>
-        </div>
-    `;
+  return `
+      <div class="task-card card mb-3" id="task-${task.id}" style="background-color: #f8f9fa;">
+          <div class="card-body">
+              <h5 class="card-title">${task.title}</h5>
+              <p class="card-text">${task.description}</p>
+              <p class="card-text"><small class="text-muted">Deadline: ${task.deadline}</small></p>
+              <button class="btn btn-danger btn-sm delete-task-button">Delete</button>
+          </div>
+      </div>
+  `;
 }
 
 // Todo: create a function to render the task list and make cards draggable
@@ -62,15 +65,16 @@ function handleAddTask(newTask) {
 }
 
 // Todo: create a function to handle deleting a task
+
 function handleDeleteTask(taskId) {
-    const taskIndex = taskList.findIndex(task => task.id === taskId);
-    if (taskIndex !== -1) {
-        taskList.splice(taskIndex, 1);
-        $(`#task-${taskId}`).remove();
-        saveToLocalStorage();
-    } else {
-        console.log('Task not found.');
-    }
+  const taskIndex = taskList.findIndex(task => task.id === taskId);
+  if (taskIndex !== -1) {
+      taskList.splice(taskIndex, 1);
+      $(`#task-${taskId}`).remove();
+      saveToLocalStorage();
+  } else {
+      console.log('Task not found.');
+  }
 }
 
 // Todo: create a function to handle dropping a task into a new status lane

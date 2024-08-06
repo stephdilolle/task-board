@@ -5,10 +5,26 @@ body {
 
 .swim-lanes {
   min-height: 60vh;
+  position: relative;
 }
 
 .task-card {
-  margin: 0 auto;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  position: absolute;
+  z-index: 1000;
+}
+
+.task-card .card-body {
+  padding: 1rem;
+}
+
+.task-card .delete-task-button {
+  margin-top: 1rem;
 }
 
 .task-card:hover {
