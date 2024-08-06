@@ -119,6 +119,7 @@ $(document).ready(function() {
 
     $('#dueDate').datepicker({
         changeMonth: true,
-        changeYear: true
+        changeYear: true,
+        dateFormat: 'mm/dd/yy'
     });
 });
